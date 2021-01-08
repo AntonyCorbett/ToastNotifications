@@ -44,4 +44,10 @@
   <ItemGroup>
     <Resource Include="toast-notifications-icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <_PackageFiles Include="bin\$(Configuration)\net5.0-windows\ToastNotifications.dll">
+      <BuildAction>None</BuildAction>
+      <PackagePath>lib\net5.0-windows7.0</PackagePath>
+    </_PackageFiles>
+  </ItemGroup>
 </Project>
