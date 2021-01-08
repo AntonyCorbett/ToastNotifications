@@ -9,13 +9,12 @@
     <Product>ToastNotifications.Messages</Product>
     <Description>This is a fork of ToastNotifications.Messages built for .NET 5.</Description>
     <Copyright>Copyright © Nick Stark 2021</Copyright>
-    <Version>3.0.0.0</Version>
-    <AssemblyVersion>3.0.0.0</AssemblyVersion>
+    <Version>3.0.1.0</Version>
+    <AssemblyVersion>3.0.1.0</AssemblyVersion>
     <FileVersion>3.0.0.0</FileVersion>
     <UseWPF>true</UseWPF>
     <Authors>Nick Stark</Authors>
-    <PackageIconUrl>https://raw.githubusercontent.com/raflop/ToastNotifications/master-v2/Media/project-icon.png</PackageIconUrl>
-    <PackageLicenseUrl>https://github.com/raflop/ToastNotifications/blob/master-v2/license</PackageLicenseUrl>
+    <PackageLicense>https://github.com/raflop/ToastNotifications/blob/master-v2/license</PackageLicense>
     <PackageProjectUrl>https://github.com/starkna/ToastNotifications</PackageProjectUrl>
     <PackageReleaseNotes>
 		Find out more at:
@@ -35,19 +34,10 @@
   <PropertyGroup>
     <ApplicationIcon>toast-notifications-icon.ico</ApplicationIcon>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ToastNotifications\ToastNotifications.csproj" />
+    <PackageReference Include="ToastNotifications.Net5" Version="3.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="toast-notifications-icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <_PackageFiles Include="bin\$(Configuration)\net5.0-windows\ToastNotifications.dll">
-      <BuildAction>None</BuildAction>
-      <PackagePath>lib\net5.0-windows7.0</PackagePath>
-    </_PackageFiles>
   </ItemGroup>
 </Project>
