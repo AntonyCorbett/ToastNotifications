@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
@@ -41,15 +41,6 @@
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
-  <PropertyGroup Condition="('$(Configuration)' == 'Release') And ('$(UseTemporarySignCert)' != 'true')">
-    <AssemblyOriginatorKeyFile>../../Build/DevCrew.ToastNotifications.pfx</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <PropertyGroup Condition="('$(Configuration)' == 'Debug') Or ('$(UseTemporarySignCert)' == 'true')">
-    <AssemblyOriginatorKeyFile>../../Build/DevCrew.ToastNotifications_TemporaryKey.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Include="DevCrew.ToastNotifications.pfx" />
-  </ItemGroup>
   <ItemGroup>
     <Resource Include="toast-notifications-icon.ico" />
   </ItemGroup>
