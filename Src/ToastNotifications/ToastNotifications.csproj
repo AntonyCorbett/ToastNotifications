@@ -26,7 +26,6 @@
 		https://github.com/raflop/ToastNotifications/blob/master-v2/Docs/ReleaseNotes.md
     </PackageReleaseNotes>
     <PackageTags>WPF notifications, Toast notifications, XAML notifications, c# notifications, UI notifications, ToastNotifications, toasts, messages, notifications, WPF, XAML, UI, notify, message, toast</PackageTags>
-    <PackageId>ToastNotifications.Net5</PackageId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
