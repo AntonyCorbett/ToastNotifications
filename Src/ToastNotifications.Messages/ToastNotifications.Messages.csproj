@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <AssemblyTitle>ToastNotifications.Messages</AssemblyTitle>
-    <Company></Company>
+    <Company>
+    </Company>
     <Product>ToastNotifications.Messages</Product>
     <Description>This is a fork of ToastNotifications.Messages built for .NET 5.</Description>
     <Copyright>Copyright © Nick Stark 2021</Copyright>
@@ -35,7 +36,7 @@
     <ApplicationIcon>toast-notifications-icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ToastNotifications.Net5" Version="3.0.0" />
+    <ProjectReference Include="..\ToastNotifications\ToastNotifications.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="toast-notifications-icon.ico" />

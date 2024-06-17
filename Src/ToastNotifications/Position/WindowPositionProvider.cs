@@ -31,19 +31,23 @@ namespace ToastNotifications.Position
         public Point GetPosition(double actualPopupWidth, double actualPopupHeight)
         {
             var parentPosition = ParentWindow.GetActualPosition();
+            if (parentPosition == null)
+            {
+                return new Point(0, 0);
+            }
 
 			switch(_corner)
             {
                 case Corner.TopRight:
-                    return GetPositionForTopRightCorner(parentPosition, actualPopupWidth, actualPopupHeight);
+                    return GetPositionForTopRightCorner(parentPosition.Value, actualPopupWidth, actualPopupHeight);
                 case Corner.TopLeft:
-                    return GetPositionForTopLeftCorner(parentPosition, actualPopupWidth, actualPopupHeight);
+                    return GetPositionForTopLeftCorner(parentPosition.Value, actualPopupWidth, actualPopupHeight);
                 case Corner.BottomRight:
-                    return GetPositionForBottomRightCorner(parentPosition, actualPopupWidth, actualPopupHeight);
+                    return GetPositionForBottomRightCorner(parentPosition.Value, actualPopupWidth, actualPopupHeight);
                 case Corner.BottomLeft:
-                    return GetPositionForBottomLeftCorner(parentPosition, actualPopupWidth, actualPopupHeight);
+                    return GetPositionForBottomLeftCorner(parentPosition.Value, actualPopupWidth, actualPopupHeight);
                 case Corner.BottomCenter:
-                    return GetPositionForBottomCenter(parentPosition, actualPopupWidth, actualPopupHeight);
+                    return GetPositionForBottomCenter(parentPosition.Value, actualPopupWidth, actualPopupHeight);
                 default:
                     throw new ArgumentOutOfRangeException();
             }

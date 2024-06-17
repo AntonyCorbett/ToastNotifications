@@ -13,7 +13,7 @@ namespace ConfigurationExample
             DataContext = _vm = new MainViewModel();
         }
 
-        private int _count = 0;
+        private int _count;
         private readonly MainViewModel _vm;
 
         private string CreateMessage()

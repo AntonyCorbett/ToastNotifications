@@ -17,7 +17,7 @@ namespace BasicUsageExample
             Unloaded += OnUnload;
         }
 
-        private int _count = 0;
+        private int _count;
         private readonly ToastViewModel _vm;
 
         private void OnUnload(object sender, RoutedEventArgs e)

@@ -24,8 +24,9 @@ namespace ToastNotifications.Utilities
 
         public static IntPtr SetWindowLong(IntPtr hWnd, int nIndex, IntPtr dwNewLong)
         {
-            int error = 0;
-            IntPtr result = IntPtr.Zero;
+            int error;
+            IntPtr result;
+
             // Win32 SetWindowLong doesn't clear error on success
             SetLastError(0);
 

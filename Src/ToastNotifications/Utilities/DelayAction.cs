@@ -8,8 +8,7 @@ namespace ToastNotifications.Utilities
     {
         public static void Execute(TimeSpan delay, Action action, Dispatcher dispatcher = null)
         {
-            if (dispatcher == null)
-                dispatcher = Dispatcher.CurrentDispatcher;
+            dispatcher ??= Dispatcher.CurrentDispatcher;
 
             Timer[] timer = {null};
             timer[0] = new Timer(obj =>

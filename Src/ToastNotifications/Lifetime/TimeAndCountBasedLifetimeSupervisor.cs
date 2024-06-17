@@ -43,10 +43,7 @@ namespace ToastNotifications.Lifetime
 
             if (_notifications.Count == _maximumNotificationCount)
             {
-                if (_notificationsPending == null)
-                {
-                    _notificationsPending = new Queue<INotification>();
-                }
+                _notificationsPending ??= new Queue<INotification>();
                 _notificationsPending.Enqueue(notification);
                 return;
             }
@@ -79,7 +76,7 @@ namespace ToastNotifications.Lifetime
         }
 
 
-        private bool _disposed = false;
+        private bool _disposed;
         public void Dispose()
         {
             if (_disposed)

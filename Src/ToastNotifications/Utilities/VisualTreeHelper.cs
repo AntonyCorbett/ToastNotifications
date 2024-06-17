@@ -29,7 +29,7 @@ namespace ToastNotifications.Utilities
         private static T GetChild<T>(string childName, DependencyObject child) where T : DependencyObject
         {
             // If the child is not of the request child type child
-            if ((child is T childType) == false)
+            if ((child is T) == false)
             {
                 // recursively drill down the tree
                 return FindChild<T>(child, childName);

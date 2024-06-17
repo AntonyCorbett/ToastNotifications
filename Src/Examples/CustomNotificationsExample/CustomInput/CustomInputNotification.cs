@@ -1,64 +1,27 @@
-﻿using CustomNotificationsExample.Utilities;
-using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows.Input;
-using ToastNotifications.Core;
+﻿using ToastNotifications.Core;
 
-namespace CustomNotificationsExample.CustomInput
+namespace CustomNotificationsExample.CustomInput;
+
+public class CustomInputNotification : NotificationBase
 {
-    public class CustomInputNotification : NotificationBase, INotifyPropertyChanged
+    private CustomInputDisplayPart _displayPart;
+    private string _inputText;
+
+    public CustomInputNotification(string message, string initialText, MessageOptions messageOptions) 
+        : base(message, messageOptions)
     {
-        private CustomInputDisplayPart _displayPart;
+        InputText = initialText;
+    }
 
-        public CustomInputNotification(string message, string initialText, MessageOptions messageOptions) : base(message, messageOptions)
+    public override NotificationDisplayPart DisplayPart => _displayPart ??= new CustomInputDisplayPart(this);
+
+    public string InputText
+    {
+        get => _inputText;
+        set
         {
-            Message = message;
-            InputText = initialText;
+            _inputText = value;
+            OnPropertyChanged();
         }
-
-        public override NotificationDisplayPart DisplayPart => _displayPart ?? (_displayPart = new CustomInputDisplayPart(this));
-
-        #region binding properties
-
-        private string _message;
-
-        public string Message
-        {
-            get
-            {
-                return _message;
-            }
-            set
-            {
-                _message = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private string _inputText;
-
-        public string InputText
-        {
-            get
-            {
-                return _inputText;
-            }
-            set
-            {
-                _inputText = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName]string propertyName = null)
-        {
-            var handler = PropertyChanged;
-            if (handler != null)
-                handler.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        #endregion
     }
 }

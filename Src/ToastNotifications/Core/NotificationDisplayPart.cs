@@ -9,7 +9,7 @@ namespace ToastNotifications.Core
 {
     public abstract class NotificationDisplayPart : UserControl
     {
-        protected INotificationAnimator Animator;
+        protected readonly INotificationAnimator Animator;
         public INotification Notification { get; protected set; }
 
         protected NotificationDisplayPart()

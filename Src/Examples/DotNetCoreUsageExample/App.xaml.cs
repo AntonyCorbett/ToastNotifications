@@ -1,30 +1,29 @@
 ﻿using System.Windows;
 
-namespace DotNetCoreUsageExample
+namespace DotNetCoreUsageExample;
+
+/// <summary>
+/// Interaction logic for App.xaml
+/// </summary>
+public partial class App : Application
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
+    protected override void OnStartup(StartupEventArgs e)
     {
-        protected override void OnStartup(StartupEventArgs e)
+        // silly https://github.com/dotnet/wpf/issues/668
+        var wnd = new Window
         {
-            // silly https://github.com/dotnet/wpf/issues/668
-            var wnd = new Window
-            {
-                Height = 0,
-                ShowInTaskbar = false,
-                Width = 0,
-                WindowStyle = WindowStyle.None
-            };
-            wnd.Show();
-            wnd.Hide();
+            Height = 0,
+            ShowInTaskbar = false,
+            Width = 0,
+            WindowStyle = WindowStyle.None
+        };
+        wnd.Show();
+        wnd.Hide();
 
-            var mainWindow = new MainWindow();
-            mainWindow.Show();
-            MainWindow = mainWindow;
+        var mainWindow = new MainWindow();
+        mainWindow.Show();
+        MainWindow = mainWindow;
 
-            base.OnStartup(e);
-        }
+        base.OnStartup(e);
     }
 }

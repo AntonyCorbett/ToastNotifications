@@ -172,7 +172,7 @@ namespace ToastNotifications.Position
         }
 
 
-        private WindowsTaskBarLocation GetTaskBarLocation()
+        private static WindowsTaskBarLocation GetTaskBarLocation()
         {
             if (SystemParameters.WorkArea.Left > 0)
                 return WindowsTaskBarLocation.Left;

@@ -12,7 +12,7 @@ namespace ToastNotifications
 {
     public class Notifier : IDisposable
     {
-        private readonly object _syncRoot = new object();
+        private readonly object _syncRoot = new();
 
         private readonly Action<NotifierConfiguration> _configureAction;
         private NotifierConfiguration _configuration;
@@ -76,7 +76,7 @@ namespace ToastNotifications
             _lifetimeSupervisor?.ClearMessages(clearStrategy);
         }
 
-        private bool _disposed = false;
+        private bool _disposed;
 
         public object SyncRoot => _syncRoot;
 

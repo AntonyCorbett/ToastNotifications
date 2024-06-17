@@ -88,9 +88,12 @@ namespace ToastNotifications.Display
 
         private void UpdateWindowPosition()
         {
-            if(_window == null || !_window.IsLoaded)
+            if (_window == null || !_window.IsLoaded)
+            {
                 return;
-            Point position = _positionProvider.GetPosition(_window.GetWidth(), _window.GetHeight());
+            }
+
+            var position = _positionProvider.GetPosition(_window.GetWidth(), _window.GetHeight());
             _window.SetPosition(position);
         }
 
